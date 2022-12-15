@@ -4,8 +4,11 @@
         <p v-else>Não está trabalhando</p>
         <p>Tecnologias</p>
         <ul>
-            <li>PHP</li>
-            <li>GO</li>
+            <li v-for="(language, index) in languages" :key="index">{{ language }}</li>
+        </ul>
+        <p>Tecnologias objeto</p>
+        <ul>
+          <li v-for="language in languagesObject" :key="language.id">{{ language.name }}</li>
         </ul>
         <div>
           <button @click="showEmail()">Mostrar email</button>
@@ -29,7 +32,13 @@ export default {
         return {
             isWorking: true,
             showEmailParagraph: true,
-            site: "https://www.google.com"
+            site: "https://www.google.com",
+            languages:['PHP', 'GO', 'Node'],
+            languagesObject: [
+              { id: 1, name : 'PHP'},
+              { id: 2, name : 'GO'},
+              { id: 3, name : 'Node'},
+            ]
         }
     },
     methods: {
