@@ -2,8 +2,8 @@
     <div>
         <h2>Descrição do {{ name }}</h2>
         <Info :email="email"/>
+        <br>
     </div>
-    
 </template>
 
 <script>
