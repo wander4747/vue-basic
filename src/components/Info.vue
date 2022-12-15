@@ -7,7 +7,10 @@
             <li>PHP</li>
             <li>GO</li>
         </ul>
-        <p v-show="showEmail">Email é: teste@test.com</p>
+        <div>
+          <button @click="showEmail()">Mostrar email</button>
+        </div>
+        <p v-show="showEmailParagraph">Email é: teste@test.com</p>
         <p>Para acessar meu portfólio <a v-bind:href="site" target="_blank">clique aqui</a></p>
         <Picture />
     </div>
@@ -25,9 +28,14 @@ export default {
     data() {
         return {
             isWorking: true,
-            showEmail: true,
+            showEmailParagraph: true,
             site: "https://www.google.com"
         }
-    }
+    },
+    methods: {
+      showEmail() {
+        this.showEmailParagraph = !this.showEmailParagraph
+      }
+  }
 }
 </script>
