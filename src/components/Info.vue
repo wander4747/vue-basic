@@ -13,7 +13,7 @@
         <div>
           <button @click="showEmail()">Mostrar email</button>
         </div>
-        <p v-show="showEmailParagraph">Email é: teste@test.com</p>
+        <p v-show="showEmailParagraph">Email é: {{ email }}</p>
         <p>Para acessar meu portfólio <a v-bind:href="site" target="_blank">clique aqui</a></p>
         <Picture />
     </div>
@@ -27,6 +27,9 @@ export default {
     name: 'Info',
     components: {
         Picture
+    },
+    props: {
+      email: String
     },
     data() {
         return {
